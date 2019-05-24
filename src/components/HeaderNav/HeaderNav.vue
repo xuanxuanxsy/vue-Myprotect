@@ -1,6 +1,6 @@
 <template>
   <div id="header-wrap">
-    <div v-if='!$route.params.id'>
+    <div v-if='!$route.meta.isshowcart'>
       <div class="header-top">
         <div class="line">
           <h1>
@@ -74,13 +74,14 @@
 </script>
 <style lang="stylus" ref="stylesheet/stylus" scoped>
   #header-wrap
-    width 100%
+    position fixed
+    z-index 5
+    width 750px
     height 147.984px
-    /*background-color aquamarine*/
+    background-color #fff
     .header-top
       height 87.98px
       width 750px
-      background-color #fff
       display flex
       justify-content center
       align-items center
@@ -124,7 +125,6 @@
     .header-bottom
       height 60px
       width 750px
-      overflow hidden
       .seller-content
         height 55px
         width 2000px

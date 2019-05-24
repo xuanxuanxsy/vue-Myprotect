@@ -3,9 +3,9 @@
     <xsy-HeadProfile></xsy-HeadProfile>
     <div class="profile">
     <div @click="$router.back()"><img src="https://yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png"></div>
-    <button><i class="iconfont icon-shoujihao"></i>&nbsp;&nbsp;手机号码登陆</button>
-    <button><i class="iconfont icon-youxiang"></i>&nbsp;&nbsp;邮箱账号登陆</button>
-    <button>手机号快捷登录 ></button>
+    <button  @click="$router.push('/login')" ><i class="iconfont icon-shoujihao"></i>&nbsp;&nbsp;手机号码登陆</button>
+    <button  @click="$router.push('/logintwo')" ><i class="iconfont icon-youxiang"></i>&nbsp;&nbsp;邮箱账号登陆</button>
+    <button @click="$router.push('/registered')">手机号快捷注册 ></button>
     <div class="iconStyle">
       <div><i class="iconfont icon-wechat-fill"></i>微信</div>|
       <div><i class="iconfont icon-qq"></i>qq</div>|
@@ -23,6 +23,7 @@
       'xsy-HeadProfile':HeadProfile
     }
   }
+
 </script>
 
 <style lang="stylus" ref="stylesheet/stylus" scoped>
@@ -46,6 +47,7 @@
         height 45*2px
     button
       border 0
+      outline none
       padding 0
       background-color #b4282d
       color #FFF

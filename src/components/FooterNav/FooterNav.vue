@@ -1,10 +1,10 @@
 <template>
-  <div id="footer-wrap" v-show="isprofile" @click="handleC" >
+  <div id="footer-wrap" >
     <div class="footer">
     <router-link to="/Home"><p class="one node0"></p>Home</router-link>
     <router-link to="/Categore"><p class="two node1"></p>Categore</router-link>
     <router-link to="/General"><p class="three node2"></p>General</router-link>
-    <router-link to="/Cart/:id"><p class="four node3"></p>Cart</router-link>
+    <router-link to="/Cart"><p class="four node3"></p>Cart</router-link>
     <router-link to="/Profile"><p class="five node4"></p>Profile</router-link>
   </div>
   </div>
@@ -14,25 +14,6 @@
   import {mapState} from 'vuex'
   export default {
     name: "FooterNav",
-    props: {
-      isprofile: Boolean,
-      isShow: Function
-    },
-    methods: {
-      handleC(){
-        let path=this.$route.path
-        this.$emit("isShow", path)
-        return path;
-      }
-    },
-    watch:{
-      handleC(newVal){
-       this.$emit("isShow", newVal)
-      }
-    },
-    mounted(){
-        this.$emit("isShow", this.$route.path)
-    }
   }
 
 //  window.onload=function () {
@@ -55,11 +36,12 @@
 
 <style lang="stylus" ref="stylesheet/stylus" scoped>
 #footer-wrap
-  position absolute
+  position fixed
   left 0px
   right 0px
   bottom 0px
   margin auto
+  z-index 5
   .footer
     display flex
     justify-content space-around

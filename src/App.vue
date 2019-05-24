@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view></router-view>
-    <xsy-FooterNav :isprofile="isProfile" @isShow="showout"></xsy-FooterNav>
+    <xsy-FooterNav v-show="$route.meta.isshow"></xsy-FooterNav>
   </div>
 </template>
 
@@ -11,17 +11,13 @@ export default {
   name: 'App',
   data(){
     return{
-      isProfile:true
+
     }
   },
   components:{
     "xsy-FooterNav":FooterNav
   },
   methods:{
-    showout(path){
-          return this.isProfile= path!="/Profile"?true:false
-          console.log(this.isProfile);
-      }
     }
   }
 </script>
